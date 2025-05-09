@@ -1,0 +1,161 @@
+﻿/* Genel yapı ve font */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    background-color: #fefefe;
+}
+
+body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
+    background-color: #f5f5f5; 
+}
+
+footer, .footer, .page-footer, .empty-space, .bottom-space {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.simulasyon-footer {
+    background-color: #0d47a1; /* Koyu mavi */
+    margin: 0;
+    padding: 30px 0;
+    color: #0d47a1;
+}
+
+body.simulasyon-bg {
+    background-image: url('/images/EBYS_resim2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: transparent !important; 
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #e3f2fd, #ffffff); /* mavi */
+    color: #1565C0;
+    margin-bottom: 80px;
+}
+
+/* Başlıklar */
+h1, h2, h3 {
+    font-weight: 700;
+    color: #0D47A1; /* Koyu mavi */
+    margin-bottom: 1rem;
+}
+
+h4, h5 {
+    color: #000000; /* Daha açık mavi */
+    margin-top: 1.5rem;
+}
+
+/* Paragraflar */
+p, ul li {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* Bölüm kutuları */
+.section-box {
+    background: #ffffff;
+    border-left: 6px solid #2196F3; /* mavi */
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.1);
+    margin-bottom: 25px;
+    transition: all 0.3s ease-in-out;
+}
+    .section-box:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(33, 150, 243, 0.15);
+    }
+
+/* Görseller */
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.simulasyon-bg {
+    background-image: url('/images/EBYS_resim2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Genel Butonlar */
+.btn {
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+
+/* Ana Buton */
+.btn-primary {
+    background-color: #2196F3; /* Mavi */
+    border-color: #2196F3;
+}
+
+    .btn-primary:hover {
+        background-color: #0D47A1; /* Daha koyu mavi */
+        transform: translateY(-1px);
+        box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
+    }
+
+/* İkincil Gri Buton */
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+        box-shadow: 0 4px 10px rgba(108, 117, 125, 0.2);
+    }
+
+/* Navigasyon */
+.navbar {
+    background: linear-gradient(to right, #0D47A1, #2196F3); /* Mavi */
+    color: #fff;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.sim-btn {
+    font-size: 1.1rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+    border-left: 5px solid #2196F3;
+    border-radius: 10px;
+}
+
+    .sim-btn:hover {
+        background-color: #e3f2fd;
+        transform: scale(1.02);
+        color: #0d47a1;
+    }
+
+
+/* Footer */
+footer {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-align: center;
+    padding: 15px 0;
+}

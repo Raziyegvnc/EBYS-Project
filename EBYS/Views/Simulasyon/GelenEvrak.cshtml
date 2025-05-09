@@ -1,0 +1,456 @@
+﻿@{
+    ViewData["Title"] = "EBYS Simülasyon - Giriş";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    body {
+        background-color: #e9edf2;
+    }
+
+    .container-fluid {
+        background-color: #f0f4f9;
+    }
+
+    .content-box {
+        background-color: white;
+        border-radius: 6px;
+        border: 1px solid #dcdcdc;
+        box-shadow: 0 0 8px rgba(0,0,0,0.03);
+        margin-bottom: 15px;
+    }
+
+    .box-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .box-title {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #3c3c3c;
+    }
+
+        .box-title i {
+            color: #66CDAA;
+            margin-right: 8px;
+        }
+
+    .collapse-btn {
+        cursor: pointer;
+        font-size: 16px;
+        color: #0D47A1;
+    }
+
+    .box-content {
+        padding: 20px;
+    }
+
+    .tabs {
+        display: flex;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .tab {
+        padding: 7px 16px;
+        font-size: 13px;
+        background-color: #f0f0f0;
+        color: #3c3c3c;
+        cursor: pointer;
+        margin-right: 3px;
+        border-radius: 5px 5px 0 0;
+    }
+
+        .tab.active {
+            background-color: #009688;
+            color: white;
+        }
+
+    .btn-ebys-primary {
+        background: linear-gradient(to right, #0D47A1, #009688);
+        color: white;
+        font-weight: bold;
+        border: none;
+    }
+
+        .btn-ebys-primary:hover {
+            background: linear-gradient(to right, #0D47A1,#009688);
+            color: white;
+        }
+
+    .btn-ebys-secondary {
+        background-color: #fafafa;
+        border: 1px solid #c5c5c5;
+        color: #555;
+        font-size: 13px;
+        padding: 4px 10px;
+    }
+
+    .form-control {
+        font-size: 13px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    .form-group label {
+        font-size: 13px;
+        color: #4f4f4f;
+        margin-bottom: 5px;
+    }
+
+    .form-check-input {
+        margin-top: 0.2rem;
+    }
+
+    .char-count {
+        text-align: right;
+        font-size: 11px;
+        color: #888;
+    }
+
+    .breadcrumb-ebys {
+        margin-bottom: 15px;
+        color: #1a2942;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .required-text {
+        color: #b00020;
+        font-size: 12px;
+    }
+
+    select.form-control {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23666' viewBox='0 0 4 5'%3E%3Cpath d='M2 0L0 2h4zM2 5L0 3h4z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 8px 10px;
+        padding-right: 1.75rem;
+    }
+</style>
+
+
+<div class="container-fluid mt-3 px-4">
+    <div class="breadcrumb-ebys">
+        Kayıt İşlemleri -> Gelen Evrak
+    </div>
+
+    <form id="evrakForm">
+        <!-- Evrak Üst Bilgileri Box -->
+        <div class="content-box">
+            <div class="box-header">
+                <div class="box-title">
+                    <i class="fa fa-file-text-o mr-2"></i> Evrak Üst Bilgileri
+                </div>
+                <div class="collapse-btn">▲</div>
+            </div>
+
+            <div class="box-content">
+                <!-- Tabs -->
+                <div class="tabs mb-3">
+                    <div class="tab active">Evrak</div>
+                    <div class="tab active">Dilekçe</div>
+                    <div class="tab active">Tebligat</div>
+                </div>
+
+               
+                <div class="row mb-3">
+                    <div class="col text-right">
+                        <button type="button" class="btn btn-sm btn-ebys-secondary mr-1 deneme-btn">Bilgi Edinme Hakkı</button>
+                        <button type="button" class="btn btn-sm btn-ebys-secondary mr-1 deneme-btn">Özel Hayatın Korunması</button>
+                        <button type="button" class="btn btn-sm btn-ebys-secondary deneme-btn">Kişiye Özel</button>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col text-right">
+                        <button type="button" class="btn btn-sm btn-ebys-secondary mr-1 gizlilik-btn">Hizmete Özel</button>
+                        <button type="button" class="btn btn-sm btn-ebys-secondary mr-1 gizlilik-btn">Gizli</button>
+                        <button type="button" class="btn btn-sm btn-ebys-secondary gizlilik-btn">Çok Gizli</button>
+
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col text-right">
+                        <button type="button" class="btn btn-sm btn-ebys-secondary mr-1 oncelik-btn">Günlüdür</button>
+                        <button type="button" class="btn btn-sm btn-ebys-secondary oncelik-btn">Acele</button>
+
+                    </div>
+                </div>
+
+                <!-- Geliş Şekli -->
+                <div class="form-group">
+                    <label style="font-size: 13px; color: #666;">Geliş Şekli:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="posta" title="Posta ile gelen evrakları seçin." />
+                        <label class="form-check-label" for="posta">Posta</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="elden" title="Elden teslim edilen evrakları seçin." />
+                        <label class="form-check-label" for="elden">Elden</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="fax" title="Faks ile gelen evrakları seçin." />
+                        <label class="form-check-label" for="fax">Fax</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="email" title="E-Mail yoluyla gelen evrakları seçin." />
+                        <label class="form-check-label" for="email">E-Mail</label>
+                    </div>
+                </div>
+
+                <!-- Geldiği Yer -->
+                <div class="form-group">
+                    <label style="font-size: 13px; color: #666;">Geldiği Yer*</label>
+                    <div class="input-group">
+                        <select class="form-control" id="geldigiYer">
+                            <option selected>Seçiniz...</option>
+                            <option>Manisa Büyükşehir Belediyesi </option>
+                            <option>Yazı İşleri ve Kararlar Dairesi Başkanlığı</option>
+                            <option>EBYS ve Arşiv Şube Müdürlüğü </option>
+                            <option>Ulaşım Dairesi Başkanlığı </option>
+                            <option>Bilgi İşlem  Şube Müdürlüğü </option>
+                            <option>Destek Hizmetleri Dairesi Başkanlığı </option>
+                        </select>
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-white" style="border-left: none;">
+                                <i class="fa fa-chevron-down text-muted"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Konu -->
+                <div class="form-group">
+                    <label style="font-size: 13px; color: #666;">Konu*</label>
+                    <textarea class="form-control" rows="3" id="konu"></textarea>
+                    <div class="char-count">0/120</div>
+                </div>
+
+                <!-- Sayı ve Evrak Tarihi -->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label style="font-size: 13px; color: #666;">Sayı*</label>
+                        <input type="text" class="form-control" id="sayi">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label style="font-size: 13px; color: #666;">Evrak Tarihi*</label>
+                        <div class="input-group">
+                            <input type="date" class="form-control" id="evrakTarihi">
+                            <div class="input-group-append">
+                                <span class="input-group-text bg-white">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Etiketler -->
+                <div class="form-group">
+                    <label style="font-size: 13px; color: #666;">Etiketler</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <!-- Ek, İlgi ve Üstyanı Ekle Box -->
+        <div class="content-box">
+            <div class="box-header">
+                <div class="box-title">
+                    <i class="fa fa-paperclip mr-2"></i> Ek, İlgi ve Üstyanı Ekle
+                </div>
+                <div class="collapse-btn">▼</div>
+            </div>
+            <div class="box-content" style="display: none;">
+                <button type="button" class="btn btn-outline-secondary btn-sm">Dosya Ekle</button>
+            </div>
+        </div>
+
+        <!-- Havale -->
+        <div class="content-box">
+            <div class="box-header">
+                <div class="box-title">
+                    <i class="fa fa-envelope mr-2"></i> Havale
+                </div>
+                <div class="collapse-btn">▼</div>
+            </div>
+            <div class="box-content" style="display: none;">
+                <div class="form-group">
+                    <label><i class="fa fa-home mr-2"></i>Seçiniz</label>
+                    <select class="form-control">
+                        <option>Seçiniz...</option>
+                        <option>Manisa Büyükşehir Belediyesi </option>
+                        <option>Yazı İşleri ve Kararlar Dairesi Başkanlığı</option>
+                        <option>EBYS ve Arşiv Şube Müdürlüğü </option>
+                        <option>Ulaşım Dairesi Başkanlığı </option>
+                        <option>Bilgi İşlem  Şube Müdürlüğü </option>
+                        <option>Destek Hizmetleri Dairesi Başkanlığı </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Havale Planı Seçiniz">
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Not" maxlength="255" rows="2"></textarea>
+                    <div class="char-count text-right">0/255</div>
+                </div>
+
+                <label class="font-weight-bold mt-2">Havale Edilecek Yerler:</label>
+
+                <div class="d-flex align-items-center mt-2">
+                    <div class="form-check mr-3">
+                        <input class="form-check-input" type="checkbox" id="onayIst">
+                        <label class="form-check-label" for="onayIst">Onay İste</label>
+                    </div>
+
+                    <button type="button" class="btn btn-sm btn-outline-success mr-2 havale-btn" data-value="Gereği">Gereği</button>
+                    <button type="button" class="btn btn-sm btn-outline-success mr-2 havale-btn" data-value="Bilgi">Bilgi</button>
+
+
+                    <input type="number" class="form-control" style="width: 60px;" min="0" value="0" placeholder="Süre">
+                </div>
+
+                <div class="mt-3">
+                    <textarea class="form-control" disabled>Havale Yeri Eklenmedi</textarea>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Ek Üst Veriler Box -->
+        <div class="content-box">
+            <div class="box-header">
+                <div class="box-title">
+                    <i class="fa fa-list-alt mr-2"></i> Ek Üst Veriler
+                </div>
+                <div class="collapse-btn">▼</div>
+            </div>
+            <div class="box-content" style="display: none;">
+            </div>
+        </div>
+
+        
+        <div class="row mt-3">
+            <div class="col-6">
+                <div class="required-text">* işaretli alanların doldurulması zorunludur!</div>
+            </div>
+            <div class="col-6 text-right">
+                <div class="form-check form-check-inline mr-2">
+                    <input type="checkbox" class="form-check-input" id="surekliKayit" />
+                    <label class="form-check-label" for="surekliKayit">Sürekli Kayıt</label>
+                </div>
+                <button type="submit" class="btn btn-ebys-primary px-3" id="kaydetBtn">Kaydet</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('[title]').tooltip();
+
+                    $('textarea[maxlength]').on('input', function () {
+            var maxLength = $(this).attr('maxlength');
+            var currentLength = $(this).val().length;
+            $(this).next('.char-count').text(currentLength + '/' + maxLength);
+        });
+
+
+            // Collapse okları
+            $('.collapse-btn').click(function () {
+                $(this).closest('.content-box').find('.box-content').slideToggle();
+                $(this).text($(this).text() === '▼' ? '▲' : '▼');
+            });
+
+            // Sekmelerden sadece biri seçilsin
+            $('.tab').click(function () {
+                $('.tab').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            // Bilgi Edinme Grubu (soldaki 3 buton)
+            $('.deneme-btn').click(function () {
+                $('.deneme-btn').removeClass('btn-ebys-primary').addClass('btn-ebys-secondary');
+                $(this).removeClass('btn-ebys-secondary').addClass('btn-ebys-primary');
+            });
+
+            // Gizlilik Grubu (Hizmete Özel - Çok Gizli)
+            $('.gizlilik-btn').click(function () {
+                $('.gizlilik-btn').removeClass('btn-ebys-primary').addClass('btn-ebys-secondary');
+                $(this).removeClass('btn-ebys-secondary').addClass('btn-ebys-primary');
+            });
+
+            // Öncelik Grubu (Günlüdür - Acele)
+            $('.oncelik-btn').click(function () {
+                $('.oncelik-btn').removeClass('btn-ebys-primary').addClass('btn-ebys-secondary');
+                $(this).removeClass('btn-ebys-secondary').addClass('btn-ebys-primary');
+            });
+
+            // Konu karakter sayacı
+            $('textarea').on('input', function () {
+                var maxLength = 120;
+                var currentLength = $(this).val().length;
+                $(this).closest('.form-group').find('.char-count').text(currentLength + '/' + maxLength);
+            });
+        });
+
+                $('#evrakForm').submit(function (e) {
+            e.preventDefault(); // Sayfa yenilenmesin
+
+            let valid = true;
+            $('.validation-error').remove(); // Önceki hata mesajlarını temizle
+
+            // Geldiği Yer kontrol
+            if ($('#geldigiYer').val() === "Seçiniz...") {
+                $('#geldigiYer').after('<div class="validation-error text-danger mt-1">Lütfen geldiği yeri seçiniz.</div>');
+                valid = false;
+            }
+
+            // Konu kontrol
+            if ($('#konu').val().trim() === "") {
+                $('#konu').after('<div class="validation-error text-danger mt-1">Konu alanı boş bırakılamaz.</div>');
+                valid = false;
+            }
+
+            // Sayı kontrol
+            if ($('#sayi').val().trim() === "") {
+                $('#sayi').after('<div class="validation-error text-danger mt-1">Sayı alanı zorunludur.</div>');
+                valid = false;
+            }
+
+            // Evrak Tarihi kontrol
+            if ($('#evrakTarihi').val() === "") {
+                $('#evrakTarihi').after('<div class="validation-error text-danger mt-1">Evrak tarihi giriniz.</div>');
+                valid = false;
+            }
+
+                  if (valid) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Başarılı!',
+                text: 'Form başarıyla gönderildi (bu bir simülasyondur).',
+                confirmButtonText: 'Tamam'
+            });
+        }
+        });
+                $('.havale-btn').click(function () {
+            $('.havale-btn').removeClass('active');  
+            $(this).addClass('active');               
+        });
+
+    </script>
+}

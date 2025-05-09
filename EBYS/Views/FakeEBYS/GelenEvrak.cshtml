@@ -1,0 +1,56 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<div class="container container-box mt-5">
+    <div class="header-title">Kayıt İşlemleri &rarr; Gelen Evrak</div>
+    <hr>
+
+    <form>
+        <div class="form-group">
+            <label>Geliş Şekli</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox"> <label class="form-check-label">Posta</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox"> <label class="form-check-label">Elden</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox"> <label class="form-check-label">Fax</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox"> <label class="form-check-label">E-Mail</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Geldiği Yer</label>
+            <select class="form-control">
+                <option>Seçiniz...</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Konu</label>
+            <input type="text" class="form-control">
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Sayısı</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Evrak Tarihi</label>
+                <input type="date" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Etiketler</label>
+            <input type="text" class="form-control">
+        </div>
+
+        <button type="button" class="btn btn-primary">Kaydet</button>
+    </form>
+</div>

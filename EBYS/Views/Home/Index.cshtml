@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "EBYS Eğitimi - Başlangıç";
+}
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .ebys-bg {
+        background-image: url('/images/EBYS_resim.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 ;
+    }
+
+    .ebys-card {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 50px;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        max-width: 1000px;
+        width: 100%;
+    }
+
+    .ebys-btn {
+        background: linear-gradient(to right, #00c9ff, #92fe9d);
+        border: none;
+        color: white;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 12px 32px;
+        border-radius: 40px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.3s ease;
+    }
+
+        .ebys-btn:hover {
+            background: linear-gradient(to right, #92fe9d, #00c9ff);
+        }
+</style>
+
+<div class="ebys-bg">
+    <div class="ebys-card">
+        <h2 class="text-primary mb-4">📄 Elektronik Belge Yönetim Sistemi (EBYS) Eğitimi</h2>
+        <p class="lead text-secondary mb-4">
+            Bu interaktif öğretici uygulama, EBYS sisteminin temel işleyişini kolayca öğrenmenizi sağlamak amacıyla hazırlanmıştır.
+            Eğitim slaytlarına geçmek için aşağıdaki butonu kullanabilirsiniz.
+        </p>
+        <a href="/Learn/Slide1_EBYSNedir" class="ebys-btn">
+            🚀 Eğitime Başla
+        </a>
+    </div>
+</div>
+

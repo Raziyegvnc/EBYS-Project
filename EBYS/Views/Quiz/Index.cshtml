@@ -1,0 +1,360 @@
+﻿@{
+    ViewData["Title"] = "EBYS Quiz";
+    Layout = "~/Views/Shared/Layout3.cshtml";
+}
+
+<div class="container my-5">
+    <div class="p-4 bg-white rounded shadow" style="max-width: 800px; margin: auto;">
+        <h2 class="text-center text-primary mb-4">EBYS Quiz</h2>
+
+        <div id="quiz-section">
+            <!-- Soru 1 -->
+            <div class="quiz-question" id="question-1">
+                <h5 class='mb-3'>1. EBYS sistemine hangi internet adresi üzerinden giriş yapılır?</h5>
+                <div class="form-check">
+                    <input type="radio" name="q1" value="a" id="q1a">
+                    <label for="q1a">www.ebys.gov.tr</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q1" value="b" id="q1b">
+                    <label for="q1b">ebys.giris.org</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q1" value="c" id="q1c">
+                    <label for="q1c">https://giris.belediye.gov.tr</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="radio" name="q1" value="d" id="q1d">
+                    <label for="q1d">www.ebysportal.net</label>
+                </div>
+                <p id="result-q1" class="fw-bold mt-2"></p>
+            </div>
+
+            <!-- Soru 2 -->
+            <div class="quiz-question d-none" id="question-2">
+                <h5 class='mb-3'>2. EBYS sistemine girişte kullanılan doğrulama yöntemi nedir?</h5>
+                <div class="form-check">
+                    <input type="radio" name="q2" value="a" id="q2a">
+                    <label for="q2a">Güvenlik sorusu</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q2" value="b" id="q2b">
+                    <label for="q2b">Mail onayı</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q2" value="c" id="q2c">
+                    <label for="q2c">SMS onay kodu</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="radio" name="q2" value="d" id="q2d">
+                    <label for="q2d">IP kontrolü</label>
+                </div>
+                <p id="result-q2" class="fw-bold mt-2"></p>
+            </div>
+
+            <!-- Soru 3 -->
+            <div class="quiz-question d-none" id="question-3">
+                <h5 class='mb-3'>3. EBYS sistemine şifre dışında giriş sağlanan yöntemlerden biri değildir?</h5>
+                <div class="form-check">
+                    <input type="radio" name="q3" value="a" id="q3a">
+                    <label for="q3a">E-imza</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q3" value="b" id="q3b">
+                    <label for="q3b">Mobil imza</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q3" value="c" id="q3c">
+                    <label for="q3c">Kart okuyucu</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="radio" name="q3" value="d" id="q3d">
+                    <label for="q3d">Yüz tanıma</label>
+                </div>
+                <p id="result-q3" class="fw-bold mt-2"></p>
+            </div>
+
+            <!-- Soru 4 -->
+            <div class="quiz-question d-none" id="question-4">
+                <h5 class='mb-3'>4. Birimde kayıt bekleyen belgeler hangi bölümde yer alır?</h5>
+                <div class="form-check">
+                    <input type="radio" name="q4" value="a" id="q4a">
+                    <label for="q4a">İşlemdeki Evraklar</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q4" value="b" id="q4b">
+                    <label for="q4b">Birimde Kayıt Bekleyenler</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q4" value="c" id="q4c">
+                    <label for="q4c">Gelen Evraklar</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="radio" name="q4" value="d" id="q4d">
+                    <label for="q4d">Evrak Arşivi</label>
+                </div>
+                <p id="result-q4" class="fw-bold mt-2"></p>
+            </div>
+
+            <!-- Soru 5 -->
+            <div class="quiz-question d-none" id="question-5">
+                <h5 class='mb-3'>5. Belge üzerine tıklanıldığında açılan ekran hangisidir?</h5>
+                <div class="form-check">
+                    <input type="radio" name="q5" value="a" id="q5a">
+                    <label for="q5a">İmza ekranı</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q5" value="b" id="q5b">
+                    <label for="q5b">Önizleme ekranı</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q5" value="c" id="q5c">
+                    <label for="q5c">Ek-İlgi ekranı</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="radio" name="q5" value="d" id="q5d">
+                    <label for="q5d">Üst yazı ekranı</label>
+                </div>
+                <p id="result-q5" class="fw-bold mt-2"></p>
+            </div>
+
+            <!-- Soru 6 -->
+            <div class="quiz-question d-none" id="question-6">
+                <h5 class='mb-3'>6. Belgeye ek/ilgi dosyası nereden eklenebilir?</h5>
+                <div class="form-check">
+                    <input type="radio" name="q6" value="a" id="q6a">
+                    <label for="q6a">Belge içeriği sekmesinden</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q6" value="b" id="q6b">
+                    <label for="q6b">Sağ üst köşedeki 'Ek/İlgi' sekmesinden</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q6" value="c" id="q6c">
+                    <label for="q6c">İmza sekmesinden</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="radio" name="q6" value="d" id="q6d">
+                    <label for="q6d">E-posta gönder sekmesinden</label>
+                </div>
+                <p id="result-q6" class="fw-bold mt-2"></p>
+            </div>
+
+            <!-- Soru 7 -->
+            <div class="quiz-question d-none" id="question-7">
+                <h5 class='mb-3'>7. Rota tanımlama işlemi hangi sayfadan yapılır?</h5>
+                <div class="form-check">
+                    <input type="radio" name="q7" value="a" id="q7a">
+                    <label for="q7a">İmza Süreci</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q7" value="b" id="q7b">
+                    <label for="q7b">Yetki Ayarları</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q7" value="c" id="q7c">
+                    <label for="q7c">Rota İşlemleri</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="radio" name="q7" value="d" id="q7d">
+                    <label for="q7d">Havale Ayarları</label>
+                </div>
+                <p id="result-q7" class="fw-bold mt-2"></p>
+            </div>
+
+            <!-- Soru 8 -->
+            <div class="quiz-question d-none" id="question-8">
+                <h5 class='mb-3'>8. Rota adı ne için gereklidir?</h5>
+                <div class="form-check">
+                    <input type="radio" name="q8" value="a" id="q8a">
+                    <label for="q8a">Gizli belge oluşturmak için</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q8" value="b" id="q8b">
+                    <label for="q8b">Havale bilgisi vermek için</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q8" value="c" id="q8c">
+                    <label for="q8c">Rota tanımını kullanıcıya özel açıklamak için</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="radio" name="q8" value="d" id="q8d">
+                    <label for="q8d">Belgeyi göndermek için</label>
+                </div>
+                <p id="result-q8" class="fw-bold mt-2"></p>
+            </div>
+
+            <!-- Soru 9 -->
+            <div class="quiz-question d-none" id="question-9">
+                <h5 class='mb-3'>9. İmza türlerinden biri değildir:</h5>
+                <div class="form-check">
+                    <input type="radio" name="q9" value="a" id="q9a">
+                    <label for="q9a">Paraf</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q9" value="b" id="q9b">
+                    <label for="q9b">Koordinasyon</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q9" value="c" id="q9c">
+                    <label for="q9c">Onay</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="radio" name="q9" value="d" id="q9d">
+                    <label for="q9d">İmza</label>
+                </div>
+                <p id="result-q9" class="fw-bold mt-2"></p>
+            </div>
+
+            <!-- Soru 10 -->
+            <div class="quiz-question d-none" id="question-10">
+                <h5 class='mb-3'>10. Favori kullanıcı nasıl belirlenir?</h5>
+                <div class="form-check">
+                    <input type="radio" name="q10" value="a" id="q10a">
+                    <label for="q10a">Kullanıcı adını iki kez yazmak gerekir</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q10" value="b" id="q10b">
+                    <label for="q10b">Personel arama kutusunda yeşil simgeye tıklanarak</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="q10" value="c" id="q10c">
+                    <label for="q10c">Unvan ekleyerek</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="radio" name="q10" value="d" id="q10d">
+                    <label for="q10d">Kayıt dışı kullanıcı olarak işaretlenerek</label>
+                </div>
+                <p id="result-q10" class="fw-bold mt-2"></p>
+            </div>
+           
+            <!-- Sonuç Kutusu -->
+            <div id="quiz-summary" class="d-none mt-5 text-center">
+                <h4 class="text-success">Quiz Tamamlandı!</h4>
+                <p id="score-display"></p>
+                <button class="btn btn-outline-primary mt-3" onclick="restartQuiz()">Tekrar Başla</button>
+            </div>
+
+            <!-- Navigasyon Butonları -->
+            <div class="text-center mt-4">
+                <button id="prev-btn" class="btn btn-secondary me-2" onclick="prevQuestion()" disabled>← Önceki</button>
+                <button id="next-btn" class="btn btn-primary" onclick="nextQuestion()">Sonraki →</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const totalQuestions = 10;
+        let current = 1;
+        let score = 0;
+        const answers = {
+            q1: 'c',
+            q2: 'c',
+            q3: 'd',
+            q4: 'b',
+            q5: 'd',
+            q6: 'b',
+            q7: 'c',
+            q8: 'c',
+            q9: 'c',
+            q10: 'b'
+        };
+
+        function showQuestion(index) {
+            for (let i = 1; i <= totalQuestions; i++) {
+                document.getElementById(`question-${i}`)?.classList.add('d-none');
+            }
+            const quizSummary = document.getElementById('quiz-summary');
+            quizSummary?.classList.add('d-none');
+            document.getElementById(`question-${index}`)?.classList.remove('d-none');
+            document.getElementById('prev-btn').disabled = index === 1;
+            document.getElementById('next-btn').disabled = index === totalQuestions;
+        }
+
+        function nextQuestion() {
+            if (current < totalQuestions) {
+                current++;
+                showQuestion(current);
+            } else {
+                showSummary();
+            }
+        }
+
+        function prevQuestion() {
+            if (current > 1) {
+                current--;
+                showQuestion(current);
+            }
+        }
+
+        function checkAnswer(questionName, correctValue) {
+            const radios = document.getElementsByName(questionName);
+            let selected = null;
+            for (const r of radios) {
+                if (r.checked) {
+                    selected = r.value;
+                    break;
+                }
+            }
+
+            const result = document.getElementById("result-" + questionName);
+            if (!result) return;
+            if (selected === correctValue) {
+                result.innerHTML = "✅ Doğru cevap!";
+                result.style.color = "green";
+                scoreTracker[questionName] = true;
+                showConfetti();
+            } else {
+                result.innerHTML = "❌ Yanlış cevap, tekrar deneyin.";
+                result.style.color = "red";
+                scoreTracker[questionName] = false;
+            }
+        }
+
+        const scoreTracker = {};
+
+        function showSummary() {
+            let correct = Object.values(scoreTracker).filter(Boolean).length;
+            let summary = document.getElementById("quiz-summary");
+            let scoreDisplay = document.getElementById("score-display");
+            summary.classList.remove("d-none");
+            scoreDisplay.innerText = `Toplam doğru sayısı: ${correct} / ${totalQuestions}`;
+        }
+
+        function showConfetti() {
+            const confetti = document.createElement('div');
+            confetti.innerHTML = '🎊';
+            confetti.style.position = 'fixed';
+            confetti.style.top = Math.random() * 100 + 'vh';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.fontSize = '2rem';
+            confetti.style.animation = 'fadeOut 2s forwards';
+            document.body.appendChild(confetti);
+            setTimeout(() => confetti.remove(), 2000);
+        }
+
+
+        function restartQuiz() {
+            current = 1;
+            score = 0;
+            for (let key in scoreTracker) scoreTracker[key] = undefined;
+            showQuestion(current);
+            document.querySelectorAll('input[type=radio]').forEach(el => el.checked = false);
+            document.querySelectorAll('p[id^=result-q]').forEach(el => el.innerHTML = "");
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            showQuestion(current);
+            Object.keys(answers).forEach(key => {
+                const radios = document.getElementsByName(key);
+                radios.forEach(r => {
+                    r.addEventListener('change', () => {
+                        checkAnswer(key, answers[key]);
+                    });
+                });
+            });
+        });
+    </script>
+}

@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Rota İşlemleri";
+}
+
+<h3>EBYS – Rota İşlemleri</h3>
+
+<p>
+    EBYS sisteminde evrak işlemlerine başlamadan önce, belgenin hangi kişiler tarafından paraflanıp imzalanacağı belirlenmelidir.
+    Bu işlem <strong>Rota İşlemleri</strong> sayfası üzerinden yapılır.
+</p>
+
+<ul>
+    <li><strong>Rota Adı:</strong> Kullanıcının anlayacağı açıklayıcı bir isim verilmelidir. (Örn: "Müdür Onaylı", "Ali → Ayşe → Veli")</li>
+    <li>
+        <strong>Rota Türü:</strong> Evrakın türüne göre seçilir:
+        <ul>
+            <li>Giden Evrak İmza Rotası</li>
+            <li>Olur Evrak İmza Rotası</li>
+            <li>Evrak Kapatma İmza Rotası</li>
+        </ul>
+    </li>
+    <li><strong>İmza Türü:</strong> Parafçı, Koordinatör veya İmzacı seçilir.</li>
+</ul>
+
+<h4>Personel Seçimi</h4>
+<p>
+    Rotaya sadece aynı birimden kullanıcılar eklenebilir. Arama kutusu ile kişi bulunur ve eklenir.
+    Sık kullanılanlar <span style="color:darkgreen;">yeşil yıldız</span> ile favorilere alınabilir.
+</p>
+
+<div class="container">
+    <div class="row justify-content-center g-4">
+
+        <div class="col-md-6 text-center">
+            <img src="~/images/rota1.png" alt="Rota 1" class="img-fluid rounded shadow" />
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="~/images/rota4.png" alt="Rota 4" class="img-fluid rounded shadow" />
+        </div>
+        
+    </div>
+</div>
+
+<h4>Unvan ve Adına Bilgisi</h4>
+<p>
+    Evrakta görünecek unvan, sistemde tanımlı resmi unvan olmalıdır. Gerekirse başka kullanıcı adına işlem yapılabilir.
+</p>
+
+<h4>Kayıt İşlemi</h4>
+<ul>
+    <li>Rotayı kaydetmek için <strong>Son kişi mutlaka imzacı</strong> olmalıdır.</li>
+    <li>Var olan rotalar güncellenebilir veya silinebilir.</li>
+    <li><strong>Varsayılan kutusu</strong> işaretlenirse, her evrakta bu rota otomatik kullanılır.</li>
+</ul>
+
+<div class="container">
+    <div class="row justify-content-center g-4">
+        <div class="col-md-6 text-center">
+            <img src="~/images/rota3.png" alt="Rota 3" class="img-fluid rounded shadow" />
+        </div>
+
+        <div class="col-md-6 text-center">
+            <img src="~/images/rota2.png" alt="Rota 2" class="img-fluid rounded shadow" />
+        </div>
+
+        
+    </div>
+</div>
+
+<h3>EBYS – Rota Güncelleme</h3>
+
+<ul>
+    <li>Mevcut rotalar listelenir, istenen rota seçilerek güncellenebilir.</li>
+    <li>Rotanın aktif/pasif durumu kontrol edilebilir.</li>
+</ul>
+
+<div class="text-center mt-4">
+    <a class="btn btn-secondary" href="/Learn/Slide2_SistemeGiris">Geri</a>
+    <a class="btn btn-success" href="/Learn/Slide4_RotaIslemleri">Sonraki</a>
+</div>

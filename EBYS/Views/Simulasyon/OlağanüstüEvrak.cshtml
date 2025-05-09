@@ -1,0 +1,200 @@
+﻿@{
+    ViewData["Title"] = "Olağanüstü Evrak Oluştur";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .sim-container {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .form-panel, .preview-panel {
+        flex: 1;
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 6px;
+    }
+
+    .preview-panel {
+        background: white;
+        min-height: 600px;
+        font-family: 'Times New Roman';
+        font-size: 15px;
+        color: black;
+    }
+
+    .box-title {
+        font-weight: bold;
+        color: #0D47A1;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .content-box {
+        background-color: white;
+        border-radius: 6px;
+        border: 1px solid #dcdcdc;
+        box-shadow: 0 0 8px rgba(0,0,0,0.03);
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .box-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+    }
+
+        .box-header:hover {
+            background-color: #f0e6f5;
+        }
+
+    .collapse-btn {
+        font-size: 18px;
+        color: #0D47A1;
+    }
+
+    .box-content {
+        padding: 15px 20px;
+        display: none;
+    }
+
+    .btn-selected {
+        background-color: #0D47A1 !important;
+        color: white !important;
+        border-color: #0D47A1 !important;
+    }
+</style>
+
+<div class="container">
+    <div class="sim-container">
+        <!-- SOL PANEL -->
+        <div class="form-panel">
+            <div class="box-title">Üst Bilgiler</div>
+            <div class="btn-group mb-2">
+                <button class="btn btn-sm btn-outline-secondary info-btn">Bilgi Edinme Hakkı</button>
+                <button class="btn btn-sm btn-outline-secondary info-btn">Özel Hayatın Korunması</button>
+                <button class="btn btn-sm btn-outline-secondary info-btn">Kişiye Özel</button>
+            </div>
+            <div class="btn-group mb-2">
+                <button class="btn btn-sm btn-outline-secondary gizlilik-btn">Hizmete Özel</button>
+                <button class="btn btn-sm btn-outline-secondary gizlilik-btn">Gizli</button>
+                <button class="btn btn-sm btn-outline-secondary gizlilik-btn">Çok Gizli</button>
+            </div>
+            <div class="btn-group mb-3">
+                <button class="btn btn-sm btn-outline-secondary oncelik-btn">Günlüdür</button>
+                <button class="btn btn-sm btn-outline-secondary oncelik-btn">Acele</button>
+            </div>
+
+            <div class="form-group">
+                <label>Standart Dosya Planı</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Konu</label>
+                <input type="text" class="form-control" maxlength="115" />
+            </div>
+            <div class="form-group">
+                <label>Evrak Kayıt Numarası</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Evrak Tarihi</label>
+                <input type="date" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Paraf Sırası</label>
+                <div class="border rounded p-2">
+                    Raziye GÜVENÇ <small>(Büro Personeli)</small> →
+                    Gülin KARAN ÖZKAYA <small>(Şube Müdürü)</small> →
+                    Özcan ÇETİN <small>(Daire Başkanı)</small>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <div class="box-header">
+                    <div class="box-title">Dağıtımlar</div>
+                    <div class="collapse-btn">▼</div>
+                </div>
+                <div class="box-content">
+                    <div class="form-group">
+                        <label>Dağıtım Yeri Seçiniz</label>
+                        <select class="form-control">
+                            <option>Seçiniz...</option>
+                            <option>Manisa Büyükşehir Belediyesi</option>
+                            <option>Yazı İşleri ve Kararlar Dairesi Başkanlığı</option>
+                            <option>EBYS ve Arşiv Şube Müdürlüğü</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Dağıtım Planı</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <div class="box-header">
+                    <div class="box-title">Ekler ve İlgiler</div>
+                    <div class="collapse-btn">▼</div>
+                </div>
+                <div class="box-content">
+                    <input type="file" class="form-control" />
+                </div>
+            </div>
+
+            <div class="content-box">
+                <div class="box-header">
+                    <div class="box-title">Ek Üst Veriler</div>
+                    <div class="collapse-btn">▼</div>
+                </div>
+                <div class="box-content">
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+            </div>
+
+            <div class="text-danger mt-2">* Alanların doldurulması zorunludur!</div>
+            <button class="btn btn-primary mt-3">Kaydet</button>
+        </div>
+
+        <!-- SAĞ PANEL: ÖN İZLEME -->
+        <div class="preview-panel">
+            <p><strong>Ön İzleme Alanı:</strong> Burada belge içeriğinizin nasıl görüneceği gösterilir. Alanları doldurdukça bu panel güncellenebilir.</p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.collapse-btn').click(function () {
+                const content = $(this).closest('.content-box').find('.box-content');
+                content.slideToggle();
+                $(this).text($(this).text() === '▼' ? '▲' : '▼');
+            });
+
+            $('.info-btn').click(function () {
+                $('.info-btn').removeClass('btn-selected');
+                $(this).addClass('btn-selected');
+            });
+
+            $('.gizlilik-btn').click(function () {
+                $('.gizlilik-btn').removeClass('btn-selected');
+                $(this).addClass('btn-selected');
+            });
+
+            $('.oncelik-btn').click(function () {
+                $('.oncelik-btn').removeClass('btn-selected');
+                $(this).addClass('btn-selected');
+            });
+        });
+    </script>
+}

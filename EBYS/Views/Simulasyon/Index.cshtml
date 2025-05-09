@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "EBYS Simülasyon - Giriş";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    ViewData["BodyClass"] = "simulasyon-bg";
+}
+
+<div class="p-4 mx-auto mb-5" style="max-width: 1000px; background-color: rgba(255,255,255,0.85); border-radius: 16px;">
+
+    <h2 class="mb-4 text-primary text-center">Simülasyon Seçin</h2>
+
+    <div class="list-group shadow-lg rounded">
+        <a asp-controller="Simulasyon" asp-action="GelenEvrak" class="list-group-item list-group-item-action sim-btn">
+            📩 Gelen Evrak Simülasyonu
+        </a>
+        <a asp-controller="Simulasyon" asp-action="GidenEvrakParaf" class="list-group-item list-group-item-action sim-btn">
+            🖋️ Giden Evrak Paraf Simülasyonu
+        </a>
+        <a asp-controller="Simulasyon" asp-action="OnayOluştur" class="list-group-item list-group-item-action sim-btn">
+            ✅ Onay Oluşturma Simülasyonu
+        </a>
+        <a asp-controller="Simulasyon" asp-action="TebligatOluştur" class="list-group-item list-group-item-action sim-btn">
+            📬 Tebligat Oluşturma Simülasyonu
+        </a>
+        <a asp-controller="Simulasyon" asp-action="OlağanüstüEvrak" class="list-group-item list-group-item-action sim-btn">
+            🚨 Olağanüstü Evrak Simülasyonu
+        </a>
+        <a asp-controller="Simulasyon" asp-action="RotaOluşturma" class="list-group-item list-group-item-action sim-btn">
+            🧭 Rota Oluşturma Simülasyonu
+        </a>
+    </div>
+</div>
