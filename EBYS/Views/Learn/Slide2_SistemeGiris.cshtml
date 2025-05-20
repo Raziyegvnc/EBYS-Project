@@ -2,33 +2,88 @@
     ViewData["Title"] = "Sisteme Giriş";
 }
 
-<h3>EBYS Sisteme Giriş</h3>
-<ul>
-    <li>Sisteme <strong>https://giris.belge.gov.tr</strong> adresi üzerinden giriş yapılır.</li>
-    <li>Kullanıcı adı ve şifre girildikten sonra, cep telefonuna gönderilen onay kodu ile doğrulama yapılır.</li>
-    <li>Sisteme giriş başarıyla tamamlandığında EBYS ana ekranı açılır.</li>
-    <li>Alternatif giriş yöntemleri: E-imza, Mobil İmza, Akıllı Kart, Parmak İzi.</li>
-</ul>
+<style>
 
-<div class="container">
-    <div class="row justify-content-center g-4">
-        
+    .section-title {
+        font-size: 28px;
+        font-weight: bold;
+        color: #003366;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .content-box {
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 25px;
+        margin-top: 20px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .ebys-image {
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .navigation-buttons a {
+        margin: 10px;
+        padding: 10px 25px;
+        font-weight: 600;
+        border-radius: 50px;
+        font-size: 16px;
+    }
+
+    .ebys-list {
+        font-size: 17px;
+        line-height: 1.7;
+        padding-left: 20px;
+    }
+
+        .ebys-list li {
+            margin-bottom: 8px;
+        }
+
+</style>
+
+<h3 class="section-title">EBYS Sistemine Giriş</h3>
+
+<div class="container content-box">
+
+    <ul class="ebys-list">
+        <li>Sisteme <strong>https://giris.belge.gov.tr</strong> adresi üzerinden giriş yapılır.</li>
+        <li>Kullanıcı adı ve şifre girildikten sonra, cep telefonuna gönderilen onay kodu ile doğrulama yapılır.</li>
+        <li>Sisteme giriş başarıyla tamamlandığında EBYS ana ekranı açılır.</li>
+        <li>Alternatif giriş yöntemleri: E-imza, Mobil İmza, Akıllı Kart, Parmak İzi.</li>
+    </ul>
+
+    <div class="row justify-content-center mt-4 g-4">
+
         <div class="col-md-6 text-center">
-            <img src="~/images/giriş.png" alt="Giriş 1" class="img-fluid rounded shadow" />
+            <img src="~/images/giriş.png" alt="Giriş 1" class="ebys-image" />
         </div>
+
         <div class="col-md-6 text-center">
-            <img src="~/images/giriş2.png" alt="Giriş 2" class="img-fluid rounded shadow" />
+            <img src="~/images/giriş2.png" alt="Giriş 2" class="ebys-image" />
         </div>
+
         <div class="col-md-6 text-center">
-            <img src="~/images/giriş3.png" alt="Giriş 3" class="img-fluid rounded shadow" />
+            <img src="~/images/giriş3.png" alt="Giriş 3" class="ebys-image" />
         </div>
+
         <div class="col-md-6 text-center">
-            <img src="~/images/giriş4.png" alt="Giriş 4" class="img-fluid rounded shadow" />
+            <img src="~/images/giriş4.png" alt="Giriş 4" class="ebys-image" />
         </div>
+
     </div>
 
-    <div class="text-center mt-4">
-        <a class="btn btn-secondary me-2" href="/Learn/Slide1_EBYSNedir">Geri</a>
-        <a class="btn btn-success" href="/Learn/Slide3_BirimEvrak">Sonraki</a>
+    <div class="text-center navigation-buttons mt-4">
+        <a class="btn btn-outline-secondary" href="/Learn/Slide1_EBYSNedir">Geri</a>
+        <a class="btn btn-primary" href="/Learn/Slide3_BirimEvrak">Sonraki</a>
     </div>
+
 </div>

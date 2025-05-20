@@ -2,14 +2,12 @@
     ViewData["Title"] = "Olağanüstü Evrak Oluştur";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <style>
     .sim-container {
         display: flex;
         gap: 20px;
         margin-top: 30px;
     }
-
     .form-panel, .preview-panel {
         flex: 1;
         background: #f9f9f9;
@@ -17,7 +15,6 @@
         padding: 20px;
         border-radius: 6px;
     }
-
     .preview-panel {
         background: white;
         min-height: 600px;
@@ -25,14 +22,12 @@
         font-size: 15px;
         color: black;
     }
-
     .box-title {
         font-weight: bold;
         color: #0D47A1;
         font-size: 16px;
         margin-bottom: 10px;
     }
-
     .content-box {
         background-color: white;
         border-radius: 6px;
@@ -41,7 +36,6 @@
         margin-bottom: 15px;
         transition: all 0.3s ease;
     }
-
     .box-header {
         display: flex;
         justify-content: space-between;
@@ -51,28 +45,23 @@
         border-bottom: 1px solid #ddd;
         cursor: pointer;
     }
-
         .box-header:hover {
             background-color: #f0e6f5;
         }
-
     .collapse-btn {
         font-size: 18px;
         color: #0D47A1;
     }
-
     .box-content {
         padding: 15px 20px;
         display: none;
     }
-
     .btn-selected {
         background-color: #0D47A1 !important;
         color: white !important;
         border-color: #0D47A1 !important;
     }
 </style>
-
 <div class="container">
     <div class="sim-container">
         <!-- SOL PANEL -->
@@ -92,7 +81,6 @@
                 <button class="btn btn-sm btn-outline-secondary oncelik-btn">Günlüdür</button>
                 <button class="btn btn-sm btn-outline-secondary oncelik-btn">Acele</button>
             </div>
-
             <div class="form-group">
                 <label>Standart Dosya Planı</label>
                 <input type="text" class="form-control" />
@@ -109,7 +97,6 @@
                 <label>Evrak Tarihi</label>
                 <input type="date" class="form-control" />
             </div>
-
             <div class="form-group">
                 <label>Paraf Sırası</label>
                 <div class="border rounded p-2">
@@ -118,7 +105,6 @@
                     Özcan ÇETİN <small>(Daire Başkanı)</small>
                 </div>
             </div>
-
             <div class="content-box">
                 <div class="box-header">
                     <div class="box-title">Dağıtımlar</div>
@@ -140,7 +126,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="content-box">
                 <div class="box-header">
                     <div class="box-title">Ekler ve İlgiler</div>
@@ -150,7 +135,6 @@
                     <input type="file" class="form-control" />
                 </div>
             </div>
-
             <div class="content-box">
                 <div class="box-header">
                     <div class="box-title">Ek Üst Veriler</div>
@@ -160,18 +144,15 @@
                     <textarea class="form-control" rows="2"></textarea>
                 </div>
             </div>
-
             <div class="text-danger mt-2">* Alanların doldurulması zorunludur!</div>
             <button class="btn btn-primary mt-3">Kaydet</button>
         </div>
-
         <!-- SAĞ PANEL: ÖN İZLEME -->
         <div class="preview-panel">
             <p><strong>Ön İzleme Alanı:</strong> Burada belge içeriğinizin nasıl görüneceği gösterilir. Alanları doldurdukça bu panel güncellenebilir.</p>
         </div>
     </div>
 </div>
-
 @section Scripts {
     <script>
         $(document).ready(function () {
@@ -180,17 +161,14 @@
                 content.slideToggle();
                 $(this).text($(this).text() === '▼' ? '▲' : '▼');
             });
-
             $('.info-btn').click(function () {
                 $('.info-btn').removeClass('btn-selected');
                 $(this).addClass('btn-selected');
             });
-
             $('.gizlilik-btn').click(function () {
                 $('.gizlilik-btn').removeClass('btn-selected');
                 $(this).addClass('btn-selected');
             });
-
             $('.oncelik-btn').click(function () {
                 $('.oncelik-btn').removeClass('btn-selected');
                 $(this).addClass('btn-selected');

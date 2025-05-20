@@ -10,23 +10,28 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/EBYS.styles.css" asp-append-version="true" />
 </head>
+
 <body class="@ViewData["BodyClass"]">
+
     <header>
+
         <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to right, #0D47A1, #2196F3);">
             <div class="container">
                 <a class="navbar-brand text-white" href="/Home/Index">EBYS Eğitimi</a>
 
                 <!-- TOGGLE BUTTON -->
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                         aria-controls="navbarContent" aria-expanded="false" aria-label="Menüyü Aç">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <!-- MENÜ İÇERİĞİ -->
+
                 <div class="collapse navbar-collapse show" id="navbarContent">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="/Home/Index">Anasayfa</a>
+                            <a class="nav-link text-white" href="/Home/Index">ANASAYFA</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="/Learn/Slide1_EBYSNedir">EBYS Nedir?</a>
@@ -70,33 +75,35 @@
         </main>
     </div>
 
-
     <footer class="text-center p-3">
         <small class="footer-content">&copy; @DateTime.Now.Year EBYS Öğretici Site</small>
     </footer>
 
-  
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
     <!-- Simülasyon Giriş -->
+
     <div class="simulasyon-footer text-center py-4">
+
         <a asp-controller="Simulasyon" asp-action="Index" class="btn btn-outline-light shadow-sm px-4 py-2 rounded-pill">
-            🔁 Simülasyon Giriş
+            🔁 SİMÜLASYON SAYFASI
         </a>
+
     </div>
 
     <!-- Quiz Giriş -->
-    <div class="simulasyon-footer text-center py-4">
-        <a asp-controller="Quiz" asp-action="Index" class="btn btn-outline-light shadow-sm px-4 py-2 rounded-pill">
-            📝 Quiz Sayfası
-        </a>
-    </div>
 
-    
+    <div class="simulasyon-footer text-center py-4">
+
+        <a asp-controller="Quiz" asp-action="Index" class="btn btn-outline-light shadow-sm px-4 py-2 rounded-pill">
+            📝 QUİZ SAYFASI
+        </a>
+
+    </div>  
 
 </body>
-</html>
 
+</html>

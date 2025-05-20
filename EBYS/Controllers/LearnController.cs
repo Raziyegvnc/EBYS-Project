@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
 namespace TrainingWeb.Controllers
 {
 	public class LearnController : Controller

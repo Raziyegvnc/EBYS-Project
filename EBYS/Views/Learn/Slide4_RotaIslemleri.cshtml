@@ -2,79 +2,135 @@
     ViewData["Title"] = "Rota İşlemleri";
 }
 
-<h3>EBYS – Rota İşlemleri</h3>
+<style>
 
-<p>
-    EBYS sisteminde evrak işlemlerine başlamadan önce, belgenin hangi kişiler tarafından paraflanıp imzalanacağı belirlenmelidir.
-    Bu işlem <strong>Rota İşlemleri</strong> sayfası üzerinden yapılır.
-</p>
+    .section-title {
+        font-size: 28px;
+        font-weight: bold;
+        color: #003366;
+        margin-bottom: 20px;
+        text-align: center;
+    }
 
-<ul>
-    <li><strong>Rota Adı:</strong> Kullanıcının anlayacağı açıklayıcı bir isim verilmelidir. (Örn: "Müdür Onaylı", "Ali → Ayşe → Veli")</li>
-    <li>
-        <strong>Rota Türü:</strong> Evrakın türüne göre seçilir:
-        <ul>
-            <li>Giden Evrak İmza Rotası</li>
-            <li>Olur Evrak İmza Rotası</li>
-            <li>Evrak Kapatma İmza Rotası</li>
-        </ul>
-    </li>
-    <li><strong>İmza Türü:</strong> Parafçı, Koordinatör veya İmzacı seçilir.</li>
-</ul>
+    .content-box {
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 25px;
+        margin-top: 20px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
 
-<h4>Personel Seçimi</h4>
-<p>
-    Rotaya sadece aynı birimden kullanıcılar eklenebilir. Arama kutusu ile kişi bulunur ve eklenir.
-    Sık kullanılanlar <span style="color:darkgreen;">yeşil yıldız</span> ile favorilere alınabilir.
-</p>
+    .ebys-image {
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
 
-<div class="container">
-    <div class="row justify-content-center g-4">
+    .navigation-buttons a {
+        margin: 10px;
+        padding: 10px 25px;
+        font-weight: 600;
+        border-radius: 50px;
+        font-size: 16px;
+    }
+
+    .ebys-list {
+        font-size: 17px;
+        line-height: 1.7;
+        padding-left: 20px;
+    }
+
+        .ebys-list li {
+            margin-bottom: 8px;
+        }
+
+</style>
+
+<h3 class="section-title">EBYS – Rota İşlemleri</h3>
+
+<div class="container content-box">
+
+    <p>
+        EBYS sisteminde evrak işlemlerine başlamadan önce, belgenin hangi kişiler tarafından paraflanıp imzalanacağı belirlenmelidir.
+        Bu işlem <strong>Rota İşlemleri</strong> sayfası üzerinden yapılır.
+    </p>
+
+    <ul class="ebys-list">
+
+        <li><strong>Rota Adı:</strong> Kullanıcının anlayacağı açıklayıcı bir isim verilmelidir. (Örn: "Müdür Onaylı", "Ali → Ayşe → Veli")</li>
+        <li>
+            <strong>Rota Türü:</strong> Evrakın türüne göre seçilir:
+           
+            <ul>
+                <li>Giden Evrak İmza Rotası</li>
+                <li>Olur Evrak İmza Rotası</li>
+                <li>Evrak Kapatma İmza Rotası</li>
+            
+            </ul>
+        </li>
+        <li><strong>İmza Türü:</strong> Parafçı, Koordinatör veya İmzacı seçilir.</li>
+   
+    </ul>
+
+    <h5 class="mt-4">Personel Seçimi</h5>
+
+    <p>
+        Rotaya sadece aynı birimden kullanıcılar eklenebilir. Arama kutusu ile kişi bulunur ve eklenir.
+        Sık kullanılanlar <span style="color:darkgreen;">yeşil yıldız</span> ile favorilere alınabilir.
+    </p>
+
+    <div class="row justify-content-center mt-4 g-4">
 
         <div class="col-md-6 text-center">
-            <img src="~/images/rota1.png" alt="Rota 1" class="img-fluid rounded shadow" />
+            <img src="~/images/rota1.png" alt="Rota 1" class="ebys-image" />
         </div>
+
         <div class="col-md-6 text-center">
-            <img src="~/images/rota4.png" alt="Rota 4" class="img-fluid rounded shadow" />
+            <img src="~/images/rota4.png" alt="Rota 4" class="ebys-image" />
         </div>
-        
+
     </div>
-</div>
 
-<h4>Unvan ve Adına Bilgisi</h4>
-<p>
-    Evrakta görünecek unvan, sistemde tanımlı resmi unvan olmalıdır. Gerekirse başka kullanıcı adına işlem yapılabilir.
-</p>
+    <h5 class="mt-4">Unvan ve Adına Bilgisi</h5>
 
-<h4>Kayıt İşlemi</h4>
-<ul>
-    <li>Rotayı kaydetmek için <strong>Son kişi mutlaka imzacı</strong> olmalıdır.</li>
-    <li>Var olan rotalar güncellenebilir veya silinebilir.</li>
-    <li><strong>Varsayılan kutusu</strong> işaretlenirse, her evrakta bu rota otomatik kullanılır.</li>
-</ul>
+    <p>
+        Evrakta görünecek unvan, sistemde tanımlı resmi unvan olmalıdır. Gerekirse başka kullanıcı adına işlem yapılabilir.
+    </p>
 
-<div class="container">
-    <div class="row justify-content-center g-4">
+    <h5 class="mt-4">Kayıt İşlemi</h5>
+
+    <ul class="ebys-list">
+        <li>Rotayı kaydetmek için <strong>Son kişi mutlaka imzacı</strong> olmalıdır.</li>
+        <li>Var olan rotalar güncellenebilir veya silinebilir.</li>
+        <li><strong>Varsayılan kutusu</strong> işaretlenirse, her evrakta bu rota otomatik kullanılır.</li>
+    </ul>
+
+    <div class="row justify-content-center mt-4 g-4">
+
         <div class="col-md-6 text-center">
-            <img src="~/images/rota3.png" alt="Rota 3" class="img-fluid rounded shadow" />
+            <img src="~/images/rota3.png" alt="Rota 3" class="ebys-image" />
         </div>
 
         <div class="col-md-6 text-center">
-            <img src="~/images/rota2.png" alt="Rota 2" class="img-fluid rounded shadow" />
+            <img src="~/images/rota2.png" alt="Rota 2" class="ebys-image" />
         </div>
 
-        
     </div>
-</div>
 
-<h3>EBYS – Rota Güncelleme</h3>
+    <h5 class="mt-4">EBYS – Rota Güncelleme</h5>
 
-<ul>
-    <li>Mevcut rotalar listelenir, istenen rota seçilerek güncellenebilir.</li>
-    <li>Rotanın aktif/pasif durumu kontrol edilebilir.</li>
-</ul>
+    <ul class="ebys-list">
+        <li>Mevcut rotalar listelenir, istenen rota seçilerek güncellenebilir.</li>
+        <li>Rotanın aktif/pasif durumu kontrol edilebilir.</li>
+    </ul>
 
-<div class="text-center mt-4">
-    <a class="btn btn-secondary" href="/Learn/Slide2_SistemeGiris">Geri</a>
-    <a class="btn btn-success" href="/Learn/Slide4_RotaIslemleri">Sonraki</a>
+    <div class="text-center navigation-buttons mt-4">
+        <a class="btn btn-outline-secondary" href="/Learn/Slide3_BirimEvrak">Geri</a>
+        <a class="btn btn-primary" href="/Learn/Slide5_KayıtIslemleri">Sonraki</a>
+    </div>
+
 </div>

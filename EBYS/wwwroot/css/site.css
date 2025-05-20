@@ -1,4 +1,4 @@
-﻿/* Genel yapı ve font */
+﻿/* Genel Yapı ve Font */
 html {
     font-size: 16px;
     scroll-behavior: smooth;
@@ -20,7 +20,7 @@ footer, .footer, .page-footer, .empty-space, .bottom-space {
 }
 
 .simulasyon-footer {
-    background-color: #0d47a1; /* Koyu mavi */
+    background-color: #0d47a1; /* Koyu Mavi */
     margin: 0;
     padding: 30px 0;
     color: #0d47a1;
@@ -37,46 +37,51 @@ body.simulasyon-bg {
 
 body {
     font-family: 'Poppins', 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #e3f2fd, #ffffff); /* mavi */
+    background: linear-gradient(to right, #e3f2fd, #ffffff); /* Mavi */
     color: #1565C0;
     margin-bottom: 80px;
 }
 
 /* Başlıklar */
+
 h1, h2, h3 {
     font-weight: 700;
-    color: #0D47A1; /* Koyu mavi */
+    color: #0D47A1; /* Koyu Mavi */
     margin-bottom: 1rem;
 }
 
 h4, h5 {
-    color: #000000; /* Daha açık mavi */
+    color: #0D47A1; /* Daha Açık Mavi */
     margin-top: 1.5rem;
 }
 
 /* Paragraflar */
+
 p, ul li {
     font-size: 1rem;
     line-height: 1.7;
-    color: #444;
+    color: #444; 
 }
 
-/* Bölüm kutuları */
-.section-box {
+/* Bölüm Kutuları */
+
+    .section-box {
     background: #ffffff;
-    border-left: 6px solid #2196F3; /* mavi */
+    border-left: 6px solid #2196F3; /* Mavi */
     padding: 25px 30px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(33, 150, 243, 0.1);
     margin-bottom: 25px;
     transition: all 0.3s ease-in-out;
 }
+
     .section-box:hover {
         transform: translateY(-4px);
         box-shadow: 0 6px 20px rgba(33, 150, 243, 0.15);
     }
 
 /* Görseller */
+
 img {
     max-width: 100%;
     border-radius: 10px;
@@ -93,6 +98,7 @@ img {
 }
 
 /* Genel Butonlar */
+
 .btn {
     padding: 10px 24px;
     border-radius: 50px;
@@ -102,18 +108,20 @@ img {
 }
 
 /* Ana Buton */
+
 .btn-primary {
     background-color: #2196F3; /* Mavi */
     border-color: #2196F3;
 }
 
     .btn-primary:hover {
-        background-color: #0D47A1; /* Daha koyu mavi */
+        background-color: #0D47A1; /*Koyu mavi */
         transform: translateY(-1px);
         box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
     }
 
 /* İkincil Gri Buton */
+
 .btn-secondary {
     background-color: #6c757d;
     border-color: #6c757d;
@@ -124,7 +132,8 @@ img {
         box-shadow: 0 4px 10px rgba(108, 117, 125, 0.2);
     }
 
-/* Navigasyon */
+/* Navbar */
+
 .navbar {
     background: linear-gradient(to right, #0D47A1, #2196F3); /* Mavi */
     color: #fff;
@@ -151,8 +160,8 @@ img {
         color: #0d47a1;
     }
 
-
 /* Footer */
+
 footer {
     font-size: 0.9rem;
     color: #6c757d;

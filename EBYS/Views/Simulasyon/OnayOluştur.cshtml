@@ -2,14 +2,12 @@
     ViewData["Title"] = "Giden Evrak - Onay Oluştur";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <style>
     .sim-container {
         display: flex;
         gap: 20px;
         margin-top: 30px;
     }
-
     .form-panel {
         flex: 1;
         background: #f9f9f9;
@@ -17,7 +15,6 @@
         padding: 20px;
         border-radius: 6px;
     }
-
     .preview-panel {
         flex: 1;
         border: 1px solid #ccc;
@@ -28,14 +25,12 @@
         font-size: 15px;
         color: black;
     }
-
     .box-title {
         font-weight: bold;
         color: #0D47A1;
         font-size: 16px;
         margin-bottom: 10px;
     }
-
     .content-box {
         background-color: white;
         border-radius: 6px;
@@ -44,7 +39,6 @@
         margin-bottom: 15px;
         transition: all 0.3s ease;
     }
-
     .box-header {
         display: flex;
         justify-content: space-between;
@@ -54,32 +48,26 @@
         border-bottom: 1px solid #ddd;
         cursor: pointer;
     }
-
         .box-header:hover {
             background-color: #f0f0f0;
         }
-
     .collapse-btn {
         font-size: 18px;
         color: #0D47A1;
     }
-
     .box-content {
         padding: 15px 20px;
         display: none;
     }
-
     .btn-group button {
         margin-right: 5px;
         margin-bottom: 8px;
     }
-
     .btn-selected {
         background-color: #4FC3F7;
         color: white;
     }
 </style>
-
 <div class="container">
     <h3 class="mb-4">Kayıt İşlemleri -> Onay Oluştur</h3>
     <div class="sim-container">
@@ -87,19 +75,16 @@
         <div class="form-panel">
             <!-- ÜST BİLGİLER -->
             <div class="box-title">Üst Bilgiler</div>
-
             <div class="btn-group mb-2">
                 <button class="btn btn-sm btn-outline-secondary info-btn">Bilgi Edinme Hakkı</button>
                 <button class="btn btn-sm btn-outline-secondary info-btn">Özel Hayatın Korunması</button>
                 <button class="btn btn-sm btn-outline-secondary info-btn">Kişiye Özel</button>
             </div>
-
             <div class="btn-group mb-3">
                 <button class="btn btn-sm btn-outline-secondary gizlilik-btn">Hizmete Özel</button>
                 <button class="btn btn-sm btn-outline-secondary gizlilik-btn">Gizli</button>
                 <button class="btn btn-sm btn-outline-secondary gizlilik-btn">Çok Gizli</button>
             </div>
-
             <div class="form-group">
                 <label>Standart Dosya Planı</label>
                 <input type="text" class="form-control" />
@@ -120,7 +105,6 @@
                     <option>Rota 2</option>
                 </select>
             </div>
-
             <!-- Dağıtım -->
             <div class="content-box">
                 <div class="box-header">
@@ -146,9 +130,6 @@
                     </div>
                 </div>
             </div>
-
-
-
             <!-- Ek ve İlgiler -->
             <div class="content-box">
                 <div class="box-header">
@@ -159,7 +140,6 @@
                     <input type="file" class="form-control" />
                 </div>
             </div>
-
             <!-- Ek Üst Veriler -->
             <div class="content-box">
                 <div class="box-header">
@@ -170,12 +150,9 @@
                     <textarea class="form-control" rows="2"></textarea>
                 </div>
             </div>
-
             <div class="text-danger mt-2">* Kırmızı alanların doldurulması zorunludur!</div>
-
             <button class="btn btn-primary mt-3">Kaydet</button>
         </div>
-
         <!-- SAĞ PANEL -->
         <div class="preview-panel">
             <div class="text-center mb-3">
@@ -190,25 +167,19 @@
         </div>
     </div>
 </div>
-
 @section Scripts {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-       
-  
+    <script> 
         $(document).ready(function () {
             $('.collapse-btn').click(function () {
                 const content = $(this).closest('.content-box').find('.box-content');
                 content.slideToggle();
                 $(this).text($(this).text() === '▼' ? '▲' : '▼');
             });
-                    
-
             $('.info-btn').click(function () {
                 $('.info-btn').removeClass('btn-selected');
                 $(this).addClass('btn-selected');
             });
-
             $('.gizlilik-btn').click(function () {
                 $('.gizlilik-btn').removeClass('btn-selected');
                 $(this).addClass('btn-selected');

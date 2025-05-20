@@ -2,7 +2,6 @@
     ViewData["Title"] = "Yeni Rota Oluştur";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <style>
     .sim-box {
         max-width: 900px;
@@ -13,45 +12,37 @@
         padding: 30px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
-
     .form-group label {
         font-weight: 500;
     }
-
     .form-title {
         font-size: 20px;
         font-weight: bold;
         color: #0D47A1;
         margin-bottom: 20px;
     }
-
     .form-control:focus {
         box-shadow: none;
         border-color: #1976D2;
     }
-
     .btn-ebys {
         background-color: #1976D2;
         color: white;
         border: none;
         font-weight: 500;
     }
-
         .btn-ebys:hover {
             background-color: #0D47A1;
         }
-
     .form-table th,
     .form-table td {
         padding: 8px 12px;
         border-bottom: 1px solid #eee;
     }
-
     .form-table th {
         font-weight: 600;
         background: #f7f7f7;
     }
-
     .form-table td:last-child {
         text-align: center;
     }
@@ -59,14 +50,12 @@
 
 <div class="sim-box">
     <div class="form-title">Yeni Rota</div>
-
     <form>
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label>Rota Adı *</label>
                 <input type="text" class="form-control" maxlength="250" />
             </div>
-
             <div class="form-group col-md-4">
                 <label>Rota Türü *</label>
                 <select class="form-control">
@@ -75,7 +64,6 @@
                     <option>Kapatma</option>
                 </select>
             </div>
-
             <div class="form-group col-md-4 d-flex align-items-center">
                 <div class="form-check mt-4">
                     <input class="form-check-input" type="checkbox" id="varsayilanmi" />
@@ -83,12 +71,8 @@
                 </div>
             </div>
         </div>
-
-
-
         <hr />
         <h5 class="mb-3 text-primary">Rota Kullanıcı Ekleme</h5>
-
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label>İmza Türü</label>
@@ -108,14 +92,11 @@
                 <input type="text" class="form-control" />
             </div>
         </div>
-
         <div class="form-group">
             <label>Adına Bilgisi</label>
             <input type="text" class="form-control" />
         </div>
-
         <button type="button" class="btn btn-sm btn-ebys mb-4">+ Kullanıcı Ekle</button>
-
         <table class="table form-table">
             <thead>
                 <tr>
@@ -136,9 +117,7 @@
                 </tr>
             </tbody>
         </table>
-
         <div class="text-danger mt-2">* Alanların doldurulması zorunludur!</div>
-
         <div class="d-flex justify-content-end mt-3">
             <button type="submit" class="btn btn-ebys mr-2">Rota Oluştur</button>
             <button type="button" class="btn btn-secondary">Kapat</button>

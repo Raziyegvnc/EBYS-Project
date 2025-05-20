@@ -2,30 +2,65 @@
     ViewData["Title"] = "EBYS Nedir?";
 }
 
-<h3>EBYS (Elektronik Belge Yönetim Sistemi) Nedir?</h3>
+<h3 class="section-title">EBYS (Elektronik Belge Yönetim Sistemi) Nedir?</h3>
 
-<p>
-    Kurum içindeki yazışmaların ve belgelerin, ilgili kanun ve kurallara uygun bir şekilde dijital ortamda güvenli, hızlı ve düzenli olarak yönetilmesini sağlayan bir sistemdir.
-</p>
+<div class="container content-box">
+    <p>
+        Kurum içindeki yazışmaların ve belgelerin, ilgili kanun ve kurallara uygun bir şekilde dijital ortamda güvenli, hızlı ve düzenli olarak yönetilmesini sağlayan bir sistemdir.
+    </p>
 
-<!-- ORTALI ve KÜÇÜK GÖRSEL -->
-<div class="row justify-content-center">
-    <div class="col-md-5 text-center">
-        <img src="~/images/Resim1.png" alt="EBYS Giriş" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+    <div class="row justify-content-center">
+
+        <div class="col-md-5 text-center">
+            <img src="~/images/Resim1.png" alt="EBYS Giriş" class="ebys-image" />
+        </div>
+
+        <div class="col-md-5 text-center">
+            <img src="~/images/Resim2.png" alt="EBYS Arayüz" class="ebys-image" />
+        </div>
+
     </div>
-    <div class="col-md-5 text-center">
-        <img src="~/images/Resim2.png" alt="EBYS Arayüz" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+
+    <p class="mt-4">
+        Bu sistem sayesinde belgeler elektronik ortamda saklanır, gönderilir ve arşivlenir. Sistem her zaman güncel tutulur ve yeni çıkan yasa ve teknolojilere kolayca uyum sağlar.
+    </p>
+
+    <div class="text-center navigation-buttons">
+        <a class="btn btn-outline-secondary" href="/Home/Index">Geri</a>
+        <a class="btn btn-primary" href="/Learn/Slide2_SistemeGiris">Sonraki</a>
     </div>
+
 </div>
 
-
-<!-- AÇIKLAMAYI HEMEN ALTINA GETİR -->
-<p class="mt-3 mb-1">
-    Bu sistem sayesinde belgeler elektronik ortamda saklanır, gönderilir ve arşivlenir. Sistem her zaman güncel tutulur ve yeni çıkan yasa ve teknolojilere kolayca uyum sağlar.
-</p>
-
-<!-- BUTONLAR -->
-<div class="text-center mt-4">
-    <a class="btn btn-secondary me-2" href="/Learn/Index">Geri</a>
-    <a class="btn btn-success" href="/Learn/Slide2_SistemeGiris">Sonraki</a>
-</div>
+<style>
+    .section-title {
+        font-size: 28px;
+        font-weight: bold;
+        color: #004255;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .content-box {
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 25px;
+        margin-top: 20px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .ebys-image {
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .navigation-buttons a {
+        margin: 10px;
+        padding: 10px 25px;
+        font-weight: 600;
+        border-radius: 50px;
+        font-size: 16px;
+    }
+</style>

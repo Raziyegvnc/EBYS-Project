@@ -2,114 +2,164 @@
     ViewData["Title"] = "Kayıt İşlemleri";
 }
 
-<h3>EBYS – Gelen Evrak Kaydı</h3>
+<style>
 
-<div class="section-box">
-    <p>
-        <strong>Gelen Evrak Kaydı</strong>, dış kurum ve kişilerden gelen belgelerin Elektronik Belge Yönetim Sistemi (EBYS) üzerinden resmi olarak kayda alınması işlemidir. Bu sayede belgeler dijital ortamda güvenli şekilde saklanır, takip edilir ve ilgili kişilere yönlendirilir.
-    </p>
+    .section-title {
+        font-size: 28px;
+        font-weight: bold;
+        color: #003366;
+        margin-bottom: 20px;
+        text-align: center;
+    }
 
-    <p>
-        Gelen evrak kaydı işlemi, evrakın üst bilgileri seçilerek, belge türüne göre <strong>Evrak, Dilekçe</strong> veya <strong>Tebligat</strong> seçeneklerinden ihtiyaca uygun olan tercih edilerek başlatılır.
-    </p>
+    .content-box {
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 25px;
+        margin-top: 20px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
 
-    <p>
-        Konu kısmı <strong>kısa, net ve anlaşılır</strong> şekilde yazılmalı, <strong>noktalama işareti kullanılmamalıdır</strong>.
-    </p>
+    .ebys-image {
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
 
-    <p><strong>Kayıt Süreci Adımları:</strong></p>
-    <ul>
+    .navigation-buttons a {
+        margin: 10px;
+        padding: 10px 25px;
+        font-weight: 600;
+        border-radius: 50px;
+        font-size: 16px;
+    }
+
+    .ebys-list {
+        font-size: 17px;
+        line-height: 1.7;
+        padding-left: 20px;
+    }
+
+        .ebys-list li {
+            margin-bottom: 8px;
+        }
+
+    h4 {
+
+        margin-top: 30px;
+        color: #004080;
+        font-weight: 600;
+   
+    }
+
+</style>
+
+<h3 class="section-title">EBYS – Gelen Evrak Kaydı</h3>
+
+<div class="container content-box">
+
+    <p><strong>Gelen Evrak Kaydı</strong>, dış kurum ve kişilerden gelen belgelerin EBYS üzerinden resmi olarak kayda alınması işlemidir. Bu sayede belgeler dijital ortamda güvenli şekilde saklanır, takip edilir ve ilgili kişilere yönlendirilir.</p>
+    <p>İşlem, evrakın üst bilgileri seçilerek, belge türüne göre <strong>Evrak, Dilekçe</strong> veya <strong>Tebligat</strong> seçenekleriyle başlatılır.</p>
+    <p>Konu kısmı <strong>kısa, net ve anlaşılır</strong> yazılmalı, <strong>noktalama işareti kullanılmamalıdır</strong>.</p>
+    
+    <h4>Kayıt Süreci Adımları</h4>
+
+    <ul class="ebys-list">
         <li><strong>Üst Bilgi Girişi:</strong> Evrak türü, sayı, tarih, geliş şekli ve gelen kurum bilgileri girilir.</li>
         <li><strong>Ek / İlgi Belgeler:</strong> Dosyalar yüklenir veya tarayıcıdan belge aktarılır.</li>
         <li><strong>Havale Ayarları:</strong> Evrakın kime yönlendirileceği belirlenir, "Gereği" ya da "Bilgi" olarak işaretlenir.</li>
-        <li><strong>Kayıt ve Gönderim:</strong> Tüm bilgiler tamamlandıktan sonra <em>Kaydet</em> butonuna tıklanarak kayıt işlemi bitirilir.</li>
+        <li><strong>Kayıt ve Gönderim:</strong> Tüm bilgiler tamamlandıktan sonra <em>Kaydet</em> butonuna tıklanır.</li>
     </ul>
+
 </div>
 
-<h3>EBYS – Giden Evrak Oluşturma</h3>
+<h3 class="section-title">EBYS – Giden Evrak Oluşturma</h3>
 
-<div class="section-box">
-    <p>
-        <strong>Giden Evrak Kaydı</strong>, kurum dışına gönderilecek resmi belgelerin hazırlanması ve EBYS üzerinden kayıt altına alınması işlemidir. Evrakın içeriği, gideceği yer ve imza rotası bu aşamada tanımlanır.
-    </p>
+<div class="container content-box">
 
-    <ul>
-        <li><strong>Yetki:</strong> Giden evrak oluşturmak için kullanıcıya "Evrak Oluşturma" yetkisi verilmiş olmalıdır.</li>
-        <li><strong>Üst Bilgi Girişi:</strong> Evrak türü, yasal statü, gizlilik derecesi, ivedilik durumu ve dosya planı seçilir.</li>
-        <li><strong>Konu Yazımı:</strong> Kısa, net ve büyük harflerle yazılır. Noktalama işareti kullanılmaz.</li>
-        <li><strong>Rota Seçimi:</strong> Daha önceden tanımlanmış imza rotası seçilir.</li>
-        <li><strong>Gönderim Türü:</strong> Kurum içi, tüzel kişilik, şahıs ya da kuruluşlara göre KEP/UETS/fiziksel seçenekleri kullanılır.</li>
-        <li><strong>Ek ve İlgi Ekleme:</strong> Sistem içi belgeler, metinler ya da dosyalar evraka eklenebilir.</li>
-        <li><strong>İçerik Hazırlığı:</strong> Editör alanında yazı oluşturulur, şablon kullanılabilir.</li>
-        <li><strong>İmza İşlemi:</strong> E-İmza veya E-Onay ile gönderim başlatılır.</li>
+    <p><strong>Giden Evrak Kaydı</strong>, kurum dışına gönderilecek belgelerin hazırlanması ve EBYS üzerinden kayıt altına alınmasıdır. Evrakın içeriği, gideceği yer ve imza rotası bu aşamada tanımlanır.</p>
+    <ul class="ebys-list">
+        <li><strong>Yetki:</strong> Giden evrak oluşturmak için kullanıcıya yetki verilmiş olmalıdır.</li>
+        <li><strong>Üst Bilgi Girişi:</strong> Evrak türü, statü, gizlilik, ivedilik ve dosya planı seçilir.</li>
+        <li><strong>Konu Yazımı:</strong> Kısa, net, büyük harflerle yazılır. Noktalama işareti kullanılmaz.</li>
+        <li><strong>Rota Seçimi:</strong> Tanımlanmış imza rotası seçilir.</li>
+        <li><strong>Gönderim Türü:</strong> Kurum içi, tüzel kişilik, şahıs gibi hedefe göre KEP/UETS/fiziksel yollar seçilir.</li>
+        <li><strong>Ek/İlgi:</strong> Dosyalar veya sistem belgeleri evraka eklenebilir.</li>
+        <li><strong>İçerik Hazırlığı:</strong> Editör alanında yazı yazılır, şablon kullanılabilir.</li>
+        <li><strong>İmza İşlemi:</strong> E-İmza veya E-Onay ile gönderim sağlanır.</li>
     </ul>
+
 </div>
 
-<h3>EBYS – Onay Oluşturma</h3>
+<h3 class="section-title">EBYS – Onay Oluşturma</h3>
 
-<div class="section-box">
-    <p>
-        <strong>Onay Oluşturma</strong>, kurum içi kararların resmiyet kazanması için hazırlanır ve yetkili kişiler tarafından imzalanması gerekir. Genellikle yöneticilerin onayladığı resmi yazılardır.
-    </p>
+<div class="container content-box">
 
-    <ul>
-        <li><strong>Üst Bilgi Seçimi:</strong> Konu, SDP dosya planı, yasal statü gibi bilgiler belirlenir.</li>
-        <li><strong>Rota Seçimi:</strong> Daha önce tanımlanmış imza/paraf rotası seçilir.</li>
-        <li><strong>Ek/İlgi Belgeleri:</strong> Sistem içi veya harici dosyalar eklenebilir.</li>
-        <li><strong>İçerik Hazırlığı:</strong> Sayfanın sağındaki düzenleyici alanda yazı yazılır.</li>
-        <li><strong>Son İşlem:</strong> Evrak e-imza ya da e-onay ile gönderilir veya taslak olarak kaydedilir.</li>
+    <p><strong>Onay Oluşturma</strong>, kurum kararlarının resmileştirilmesi amacıyla yetkililerce imzalanan yazılardır.</p>
+    <ul class="ebys-list">
+        <li><strong>Üst Bilgi:</strong> Konu, SDP kodu, yasal statü belirlenir.</li>
+        <li><strong>Rota:</strong> Paraf/imza rotası seçilir.</li>
+        <li><strong>Ek/İlgi:</strong> Gerekli dosyalar eklenir.</li>
+        <li><strong>İçerik:</strong> Sağdaki düzenleyici ile metin yazılır.</li>
+        <li><strong>Son İşlem:</strong> E-imza veya e-onay ile gönderilir ya da taslak olarak kaydedilir.</li>
     </ul>
+
 </div>
 
-<h3>EBYS – Tebligat Oluşturma</h3>
+<h3 class="section-title">EBYS – Tebligat Oluşturma</h3>
 
-<div class="section-box">
-    <p>
-        <strong>Tebligat Oluşturma</strong>, bir belge veya kararın resmi olarak ilgili kişiye iletilmesini sağlayan EBYS işlemlerinden biridir. Bu işlemle belgeler UETS, KEP veya fiziksel olarak gönderilir.
-    </p>
+<div class="container content-box">
 
-    <ul>
-        <li><strong>Üst Bilgiler:</strong> Yasal statü, gizlilik durumu, ivedilik ve dosya planı belirlenir.</li>
-        <li><strong>Konu:</strong> Açık, öz ve büyük harflerle yazılmalı, noktalama olmamalıdır.</li>
-        <li><strong>Rota Seçimi:</strong> Giden evrak rotası seçilir (önceden tanımlanmış olmalıdır).</li>
-        <li><strong>Dağıtım Ayarları:</strong> Tebligat gönderilecek yer kurum içi, tüzel kişilik, şahıs vb. olarak belirlenir.</li>
-        <li><strong>Ek/İlgi Belgeleri:</strong> Sistem içinden ya da dosya olarak belge eklenebilir.</li>
-        <li><strong>İçerik Düzenleme:</strong> Sayfanın sağındaki düzenleme panelinden metin hazırlanır, şablon kullanılabilir.</li>
-        <li><strong>Gönderim:</strong> Evrak E-İmza veya E-Onay ile gönderilir. UETS/KEP adresine göre işlem yapılır.</li>
+    <p><strong>Tebligat Oluşturma</strong>, belgelerin yasal yollarla ilgili kişilere ulaştırılması işlemidir. UETS, KEP veya fiziksel yolla gerçekleştirilir.</p>
+    <ul class="ebys-list">
+        <li><strong>Üst Bilgiler:</strong> Statü, gizlilik, ivedilik ve dosya planı seçilir.</li>
+        <li><strong>Konu:</strong> Büyük harf, kısa ve öz. Noktalama kullanılmaz.</li>
+        <li><strong>Rota:</strong> Daha önce tanımlanmış rota seçilir.</li>
+        <li><strong>Dağıtım:</strong> Hedef kişi/kurum seçilir.</li>
+        <li><strong>Ek/İlgi:</strong> Dosya veya sistem belgeleri eklenebilir.</li>
+        <li><strong>İçerik:</strong> Şablon kullanılabilir, sağ panelden yazı hazırlanır.</li>
+        <li><strong>Gönderim:</strong> E-İmza veya E-Onay ile yapılır.</li>
     </ul>
+
 </div>
 
+<h3 class="section-title">EBYS – Olağanüstü Evrak Oluşturma</h3>
 
-<h3>EBYS – Olağanüstü Evrak Oluşturma</h3>
+<div class="container content-box">
 
-<div class="section-box">
-    <p>
-        <strong>Olağanüstü Evrak</strong>, normal süreçlerin dışında kalan acil ve özel durumlara ilişkin hazırlanan resmi belgelerdir.
-    </p>
-
-    <ul>
-        <li><strong>Yasal Statü:</strong> Bilgi Edinme, Kişiye Özel vb. durumlara göre seçilir.</li>
-        <li><strong>İvedilik Durumu:</strong> Evrakın aciliyetine göre belirlenir.</li>
-        <li><strong>Gizlilik Derecesi:</strong> Gerekliyse mutlaka işaretlenir.</li>
-        <li><strong>SDP (Standart Dosya Planı):</strong> Konu kodu girilerek seçilir.</li>
-        <li><strong>Konu Yazımı:</strong> Noktalama işareti olmadan ve kısa, net biçimde yazılır.</li>
-        <li><strong>İmza Rotası:</strong> Daha önceden tanımlanmış rota seçilir.</li>
-        <li><strong>Gönderim Türü:</strong> Kurum içi, tüzel kişi, şahıs gibi seçilir. Gönderim şekli UETS veya fiziksel olabilir.</li>
+    <p><strong>Olağanüstü Evrak</strong>, acil ve istisnai durumlar için oluşturulan resmi belgelerdir.</p>
+    <ul class="ebys-list">
+        <li><strong>Yasal Statü:</strong> Örn. Bilgi Edinme, Kişiye Özel</li>
+        <li><strong>İvedilik:</strong> Aciliyet durumuna göre seçilir.</li>
+        <li><strong>Gizlilik:</strong> Gerekliyse işaretlenir.</li>
+        <li><strong>SDP:</strong> Konu kodu ile seçilir.</li>
+        <li><strong>Konu:</strong> Noktalama olmadan, kısa ve net</li>
+        <li><strong>İmza Rotası:</strong> Önceden tanımlanmış bir rota seçilir.</li>
+        <li><strong>Gönderim:</strong> Kurum içi, tüzel kişi, şahıs, UETS/fiziksel yollar</li>
     </ul>
+
 </div>
 
-<div class="container mt-4">
+<div class="container mt-5">
     <div class="row justify-content-center g-4">
+        
         <div class="col-md-6 text-center">
-            <img src="~/images/gelenevrak1.png" alt="Gelen Evrak 1" class="img-fluid rounded shadow" />
+            <img src="~/images/gelenevrak1.png" alt="Gelen Evrak 1" class="ebys-image" />
         </div>
-        <div class="col-md-6 text-center">
-            <img src="~/images/gelenevrak2.png" alt="Gelen Evrak 2" class="img-fluid rounded shadow" />
-        </div>
-    </div>
-</div>
 
-<div class="text-center mt-4">
-    <a class="btn btn-secondary me-2" href="/Learn/Slide4_RotaIslemleri">Geri</a>
-    <a class="btn btn-success" href="/Learn/Slide6_IslemYaptıklarım">Sonraki</a>
+        <div class="col-md-6 text-center">
+            <img src="~/images/gelenevrak2.png" alt="Gelen Evrak 2" class="ebys-image" />
+        </div>
+
+    </div>
+
+    <div class="text-center navigation-buttons mt-4">
+        <a class="btn btn-outline-secondary" href="/Learn/Slide4_RotaIslemleri">Geri</a>
+        <a class="btn btn-primary" href="/Learn/Slide6_IslemYaptıklarım">Sonraki</a>
+   
+    </div>
 </div>

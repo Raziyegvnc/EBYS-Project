@@ -2,13 +2,13 @@
     ViewData["Title"] = "EBYS Quiz";
     Layout = "~/Views/Shared/Layout3.cshtml";
 }
-
 <div class="container my-5">
     <div class="p-4 bg-white rounded shadow" style="max-width: 800px; margin: auto;">
         <h2 class="text-center text-primary mb-4">EBYS Quiz</h2>
-
         <div id="quiz-section">
+
             <!-- Soru 1 -->
+
             <div class="quiz-question" id="question-1">
                 <h5 class='mb-3'>1. EBYS sistemine hangi internet adresi üzerinden giriş yapılır?</h5>
                 <div class="form-check">
@@ -31,6 +31,7 @@
             </div>
 
             <!-- Soru 2 -->
+
             <div class="quiz-question d-none" id="question-2">
                 <h5 class='mb-3'>2. EBYS sistemine girişte kullanılan doğrulama yöntemi nedir?</h5>
                 <div class="form-check">
@@ -53,6 +54,7 @@
             </div>
 
             <!-- Soru 3 -->
+
             <div class="quiz-question d-none" id="question-3">
                 <h5 class='mb-3'>3. EBYS sistemine şifre dışında giriş sağlanan yöntemlerden biri değildir?</h5>
                 <div class="form-check">
@@ -75,6 +77,7 @@
             </div>
 
             <!-- Soru 4 -->
+
             <div class="quiz-question d-none" id="question-4">
                 <h5 class='mb-3'>4. Birimde kayıt bekleyen belgeler hangi bölümde yer alır?</h5>
                 <div class="form-check">
@@ -97,6 +100,7 @@
             </div>
 
             <!-- Soru 5 -->
+
             <div class="quiz-question d-none" id="question-5">
                 <h5 class='mb-3'>5. Belge üzerine tıklanıldığında açılan ekran hangisidir?</h5>
                 <div class="form-check">
@@ -118,7 +122,8 @@
                 <p id="result-q5" class="fw-bold mt-2"></p>
             </div>
 
-            <!-- Soru 6 -->
+            <!f-- Soru 6 -->
+
             <div class="quiz-question d-none" id="question-6">
                 <h5 class='mb-3'>6. Belgeye ek/ilgi dosyası nereden eklenebilir?</h5>
                 <div class="form-check">
@@ -141,6 +146,7 @@
             </div>
 
             <!-- Soru 7 -->
+
             <div class="quiz-question d-none" id="question-7">
                 <h5 class='mb-3'>7. Rota tanımlama işlemi hangi sayfadan yapılır?</h5>
                 <div class="form-check">
@@ -163,6 +169,7 @@
             </div>
 
             <!-- Soru 8 -->
+
             <div class="quiz-question d-none" id="question-8">
                 <h5 class='mb-3'>8. Rota adı ne için gereklidir?</h5>
                 <div class="form-check">
@@ -185,6 +192,7 @@
             </div>
 
             <!-- Soru 9 -->
+
             <div class="quiz-question d-none" id="question-9">
                 <h5 class='mb-3'>9. İmza türlerinden biri değildir:</h5>
                 <div class="form-check">
@@ -207,6 +215,7 @@
             </div>
 
             <!-- Soru 10 -->
+
             <div class="quiz-question d-none" id="question-10">
                 <h5 class='mb-3'>10. Favori kullanıcı nasıl belirlenir?</h5>
                 <div class="form-check">
@@ -227,15 +236,17 @@
                 </div>
                 <p id="result-q10" class="fw-bold mt-2"></p>
             </div>
-           
+
             <!-- Sonuç Kutusu -->
+
             <div id="quiz-summary" class="d-none mt-5 text-center">
                 <h4 class="text-success">Quiz Tamamlandı!</h4>
                 <p id="score-display"></p>
                 <button class="btn btn-outline-primary mt-3" onclick="restartQuiz()">Tekrar Başla</button>
             </div>
 
-            <!-- Navigasyon Butonları -->
+            <!-- Navbar Butonları -->
+
             <div class="text-center mt-4">
                 <button id="prev-btn" class="btn btn-secondary me-2" onclick="prevQuestion()" disabled>← Önceki</button>
                 <button id="next-btn" class="btn btn-primary" onclick="nextQuestion()">Sonraki →</button>
@@ -261,7 +272,6 @@
             q9: 'c',
             q10: 'b'
         };
-
         function showQuestion(index) {
             for (let i = 1; i <= totalQuestions; i++) {
                 document.getElementById(`question-${i}`)?.classList.add('d-none');
@@ -272,7 +282,6 @@
             document.getElementById('prev-btn').disabled = index === 1;
             document.getElementById('next-btn').disabled = index === totalQuestions;
         }
-
         function nextQuestion() {
             if (current < totalQuestions) {
                 current++;
@@ -281,14 +290,12 @@
                 showSummary();
             }
         }
-
         function prevQuestion() {
             if (current > 1) {
                 current--;
                 showQuestion(current);
             }
         }
-
         function checkAnswer(questionName, correctValue) {
             const radios = document.getElementsByName(questionName);
             let selected = null;
@@ -298,7 +305,6 @@
                     break;
                 }
             }
-
             const result = document.getElementById("result-" + questionName);
             if (!result) return;
             if (selected === correctValue) {
@@ -312,9 +318,7 @@
                 scoreTracker[questionName] = false;
             }
         }
-
         const scoreTracker = {};
-
         function showSummary() {
             let correct = Object.values(scoreTracker).filter(Boolean).length;
             let summary = document.getElementById("quiz-summary");
@@ -322,10 +326,9 @@
             summary.classList.remove("d-none");
             scoreDisplay.innerText = `Toplam doğru sayısı: ${correct} / ${totalQuestions}`;
         }
-
         function showConfetti() {
             const confetti = document.createElement('div');
-            confetti.innerHTML = '🎊';
+            confetti.innerHTML = '🎊🎊🎊';
             confetti.style.position = 'fixed';
             confetti.style.top = Math.random() * 100 + 'vh';
             confetti.style.left = Math.random() * 100 + 'vw';
@@ -334,8 +337,6 @@
             document.body.appendChild(confetti);
             setTimeout(() => confetti.remove(), 2000);
         }
-
-
         function restartQuiz() {
             current = 1;
             score = 0;
@@ -344,7 +345,6 @@
             document.querySelectorAll('input[type=radio]').forEach(el => el.checked = false);
             document.querySelectorAll('p[id^=result-q]').forEach(el => el.innerHTML = "");
         }
-
         document.addEventListener("DOMContentLoaded", () => {
             showQuestion(current);
             Object.keys(answers).forEach(key => {
