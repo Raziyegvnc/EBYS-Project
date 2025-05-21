@@ -2,6 +2,7 @@
     ViewData["Title"] = "Giden Evrak Paraf Simülasyonu";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <style>
     .sim-container {
         display: flex;
@@ -49,7 +50,7 @@
         border-bottom: 1px solid #ddd;
         cursor: pointer;
     }
-        .box-header:hover {
+    .box-header:hover {
             background-color: #f0e6f5;
         }
     .box-title {
@@ -68,6 +69,7 @@
         display: none;
     }
 </style>
+
 <div class="container">
     <h3 class="mb-4">Kayıt İşlemleri -&gt; Giden Evrak</h3>
     <div class="sim-container">
@@ -96,7 +98,7 @@
                 <label>Konu</label>
                 <input type="text" class="form-control" />
             </div>
-            <hr />
+            <hr/>
             <h5><strong>Paraf Sırası</strong></h5>
             <div class="d-flex flex-wrap gap-2">
                 <div class="border rounded p-2">Raziye GÜVENÇ <br /><small>Büro Personeli</small></div>
@@ -153,7 +155,7 @@
         <div class="preview-panel">
             <div class="text-center mb-3">
                 <img src="~/images/amblem.png" alt="logo" width="80" style="float: left;" />
-                <h5 class="mt-2">T.C.<br /> MANİSA BÜYÜKŞEHİR BELEDİYE BAŞKANLIĞI<br /> <br />Yazı İşleri ve Kararlar Dairesi Başkanlığı <br />EBYS ve Arşiv Şube Müdürlüğü</h5>
+                <h5 class="mt-2">T.C.<br/>MANİSA BÜYÜKŞEHİR BELEDİYE BAŞKANLIĞI<br /> <br />Yazı İşleri ve Kararlar Dairesi Başkanlığı <br />EBYS ve Arşiv Şube Müdürlüğü</h5>
             </div>
             <p><strong>Sayı:</strong> 40098702-sdp-Otomatik &nbsp;&nbsp;&nbsp; <strong>Tarih:</strong> Otomatik Tarih</p>
             <p><strong>Konu:</strong> ........................................</p>
@@ -174,12 +176,29 @@
                     <td><strong>Şube Müdürü:</strong>.............</td>
                 </tr>
             </table>
+
+            <div class="row mt-3">
+                <div class="col-6">
+                    <div class="required-text">* işaretli alanların doldurulması zorunludur!</div>
+                </div>
+                <div class="col-6 text-right">
+                    <div class="form-check form-check-inline mr-2">
+                        <input type="checkbox" class="form-check-input" id="surekliKayit" />
+                        <label class="form-check-label" for="surekliKayit">Sürekli Kayıt</label>
+                    </div>
+                    <button type="submit" class="btn btn-ebys-primary px-3" id="kaydetBtn">Kaydet</button>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
 @section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-            $(document).ready(function () {
+        $(document).ready(function () {
+
+            // Buton seçim renkleri
             $('.info-btn').click(function () {
                 $('.info-btn').removeClass('btn-selected');
                 $(this).addClass('btn-selected');
@@ -196,6 +215,41 @@
                 const content = $(this).closest('.content-box').find('.box-content');
                 content.slideToggle();
                 $(this).text($(this).text() === '▼' ? '▲' : '▼');
+            });
+
+            // Kaydet Butonu Olayı
+            $('#kaydetBtn').click(function () {
+                let valid = true;
+                $('.validation-error').remove();
+
+                const dosyaPlani = $('#dosyaPlani').val().trim();
+                const konu = $('#konu').val().trim();
+
+                if (dosyaPlani === "") {
+                    $('#dosyaPlani').after('<div class="validation-error text-danger mt-1">Dosya planı zorunludur.</div>');
+                    valid = false;
+                }
+
+                if (konu === "") {
+                    $('#konu').after('<div class="validation-error text-danger mt-1">Konu alanı boş bırakılamaz.</div>');
+                    valid = false;
+                }
+
+                if (!valid) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Eksik Bilgi!',
+                        text: 'Lütfen zorunlu alanları doldurunuz.',
+                        confirmButtonText: 'Tamam'
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Başarılı!',
+                        text: 'Form başarıyla gönderildi (bu bir simülasyondur).',
+                        confirmButtonText: 'Tamam'
+                    });
+                }
             });
         });
     </script>
